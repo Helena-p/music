@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  height: 6rem;
+  padding: 1.2rem;
+}
+
+.navigation {
+  width: 100%;
+  &__box {
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+  }
+  &__links {
+    margin-left: auto;
+  }
+}

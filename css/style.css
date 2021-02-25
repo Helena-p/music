@@ -40,4 +40,27 @@ body {
   line-height: 1.8rem;
   text-align: center; }
 
+@media screen and (max-width: 400px) {
+  .navigation__links {
+    display: none; }
+
+  .fa-ellipsis-h {
+    margin-left: auto; } }
+.header {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  height: 6rem;
+  padding: 1.2rem; }
+
+.navigation {
+  width: 100%; }
+  .navigation__box {
+    display: flex;
+    width: 100%;
+    list-style-type: none; }
+  .navigation__links {
+    margin-left: auto; }
+
 /*# sourceMappingURL=style.css.map */
