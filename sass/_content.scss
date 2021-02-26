@@ -1,6 +1,29 @@
+@import "font";
+
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
+  margin: 0 auto;
+  width: 90%;
+  height: 90vh;
+  justify-content: center;
   align-items: flex-end;
+  align-content: flex-end;
+}
+.arrow {
+  display: none;
+}
+
+.content {
+  width: 90%;
+
+  align-self: flex-end;
+  &__paragraph {
+    max-width: 28rem;
+    margin: auto;
+  }
+}
+
+picture {
+  padding-bottom: 2rem;
 }

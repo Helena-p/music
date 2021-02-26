@@ -16,7 +16,7 @@ body {
   height: 100%; }
 
 .header__logo {
-  font-family: "Baloo", sans-serif;
+  font-family: "Baloo-regular", sans-serif;
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 3.6rem;
@@ -44,7 +44,58 @@ body {
 
 @media (min-width: 440px) {
   .nav-toggle-label {
-    display: none; } }
+    display: none; }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr; }
+
+  .logo {
+    grid-column: 2 / 3; }
+
+  nav {
+    /* the following lines are not from my video, but add Edge support */
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+
+  nav ul {
+    display: flex; }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0; }
+
+  nav a {
+    opacity: 1;
+    position: relative; }
+
+  nav a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms; }
+
+  nav a:hover::before {
+    transform: scale(1, 1); } }
+@media screen and (min-width: 1200px) {
+  .arrow {
+    display: block; } }
 .header {
   width: 90%;
   margin: 0 auto;
@@ -115,10 +166,54 @@ body {
     .nav-toggle-label span::after {
       top: 0.7rem; }
 
+.header__logo {
+  font-family: "Baloo-regular", sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  letter-spacing: -0.025rem; }
+
+.navigation__box {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.2rem; }
+
+.content__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 3.6rem;
+  line-height: 4rem;
+  text-align: center;
+  letter-spacing: -0.08rem; }
+.content__paragraph {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center; }
+
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
-  align-items: flex-end; }
+  margin: 0 auto;
+  width: 90%;
+  height: 90vh;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end; }
+
+.arrow {
+  display: none; }
+
+.content {
+  width: 90%;
+  align-self: flex-end; }
+  .content__paragraph {
+    max-width: 28rem;
+    margin: auto; }
+
+picture {
+  padding-bottom: 2rem; }
 
 /*# sourceMappingURL=style.css.map */
