@@ -1,93 +1,165 @@
 @import "color";
 
 .header {
-  width: 90%;
-  margin: 0 auto;
-  height: 6rem;
-  padding: 1.2rem;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, 0.75);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
   position: relative;
 }
 
-.nav-toggle {
-  display: none;
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
 }
 
-.navigation {
-  width: 100%;
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
   position: absolute;
+  text-align: left;
   top: 100%;
-  right: 0;
-  text-align: right;
-  // Animates the dropdown menu
+  left: 0;
+  background: var(--background);
+  width: 100%;
   transform: scale(1, 0);
   transform-origin: top;
   transition: transform 400ms ease-in-out;
-  &__box {
-    width: 100%;
-    list-style-type: none;
-  }
-  &__links {
-    margin-bottom: 1rem;
-    a {
-      color: $text;
-      text-decoration: none;
-      opacity: 0;
-      // Animation of opacity
-      transition: opacity 150ms ease-in-out;
-    }
-    a:hover {
-      border-bottom: 0.2rem solid red;
-    }
-  }
 }
 
-.nav-toggle {
-  position: absolute;
-  top: 40%;
-  right: 0;
-  text-align: right;
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-// Toggles the dropdown menu with transform
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: #000;
+}
+
 .nav-toggle:checked ~ nav {
   transform: scale(1, 1);
 }
 
 .nav-toggle:checked ~ nav a {
   opacity: 1;
-  // Animation of opacity with a 250ms delay
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-.nav-toggle-label {
-  position: absolute;
-  top: 2.4rem;
-  right: 1.6rem;
-  color: $text;
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
 
-  // Styling the toggle
-  span {
-    display: block;
-    background: $text;
-    height: 0.2rem;
-    width: 2rem;
-    border-radius: 0.2rem;
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    // all: unset; /* this causes issues with Edge, since it's unsupported */
+
+    /* the following lines are not from my video, but add Edge support */
     position: relative;
-    &::after,
-    &::before {
-      display: block;
-      background: $text;
-      height: 0.2rem;
-      width: 2rem;
-      border-radius: 0.2rem;
-      position: absolute;
-      content: "";
-    }
-    &::before {
-      bottom: 0.7rem;
-    }
-    &::after {
-      top: 0.7rem;
-    }
+    text-align: left;
+    transition: none;
+    transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
   }
 }
