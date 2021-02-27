@@ -23,9 +23,8 @@
   }
 
   nav {
-    // all: unset; /* this causes issues with Edge, since it's unsupported */
-
-    /* the following lines are not from my video, but add Edge support */
+    // all: unset; this causes issues with Edge, since it's unsupported
+    // add Edge support
     position: relative;
     text-align: left;
     transition: none;
@@ -33,7 +32,7 @@
     background: none;
     top: initial;
     left: initial;
-    /* end Edge support stuff */
+    // end Edge support
 
     grid-column: 3 / 4;
     display: flex;
@@ -58,7 +57,7 @@
   nav a::before {
     content: "";
     display: block;
-    height: 5px;
+    height: 0.5rem;
     background: $background;
     position: absolute;
     top: -0.75em;
@@ -89,6 +88,6 @@
   }
   .content__paragraph {
     width: 70%;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
 }

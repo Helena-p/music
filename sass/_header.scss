@@ -10,16 +10,11 @@
   width: 100%;
 }
 
-/* changed this from the tutorial video to
-   allow it to gain focus, making it tabbable */
+// To make it tabbable for accessability
 .nav-toggle {
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;
-}
-
-.nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid rgba(lightblue, 0.75);
 }
 
 .nav-toggle-label {
@@ -37,9 +32,9 @@
 .nav-toggle-label span::after {
   display: block;
   background: $text;
-  height: 2px;
+  height: 0.2rem;
   width: 2em;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   position: relative;
 }
 
@@ -50,11 +45,11 @@
 }
 
 .nav-toggle-label span::before {
-  bottom: 7px;
+  bottom: 0.7rem;
 }
 
 .nav-toggle-label span::after {
-  top: 7px;
+  top: 0.7rem;
 }
 
 nav {
@@ -82,9 +77,9 @@ nav li {
 nav a {
   color: $text;
   text-decoration: none;
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-size: 1.6rem;
   opacity: 0;
+  // Animated collapsable menu
   transition: opacity 150ms ease-in-out;
 }
 
@@ -97,6 +92,7 @@ nav a:hover {
   transform: scale(1, 1);
 }
 
+// Animated dropdown menu with delay of 250ms
 .nav-toggle:checked ~ nav a {
   opacity: 1;
   transition: opacity 250ms ease-in-out 250ms;

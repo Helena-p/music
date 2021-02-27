@@ -80,15 +80,10 @@ body {
   z-index: 999;
   width: 100%; }
 
-/* changed this from the tutorial video to
-   allow it to gain focus, making it tabbable */
 .nav-toggle {
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important; }
-
-.nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid rgba(173, 216, 230, 0.75); }
 
 .nav-toggle-label {
   position: absolute;
@@ -104,9 +99,9 @@ body {
 .nav-toggle-label span::after {
   display: block;
   background: #fff;
-  height: 2px;
+  height: 0.2rem;
   width: 2em;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   position: relative; }
 
 .nav-toggle-label span::before,
@@ -115,10 +110,10 @@ body {
   position: absolute; }
 
 .nav-toggle-label span::before {
-  bottom: 7px; }
+  bottom: 0.7rem; }
 
 .nav-toggle-label span::after {
-  top: 7px; }
+  top: 0.7rem; }
 
 nav {
   position: absolute;
@@ -142,8 +137,7 @@ nav li {
 nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-size: 1.6rem;
   opacity: 0;
   transition: opacity 150ms ease-in-out; }
 
@@ -196,19 +190,19 @@ nav a:hover {
   margin: 0 auto;
   width: 90%;
   height: 100vh;
-  padding: 5%; }
+  padding: 3%; }
 
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin: auto;
   width: 90%;
   height: 30%;
-  padding: 5%; }
+  padding: 2%; }
   .content__paragraph {
-    margin: auto; }
+    margin: 0 auto; }
 
 .picture {
   align-self: flex-end; }
@@ -225,7 +219,6 @@ nav a:hover {
     grid-column: 2 / 3; }
 
   nav {
-    /* the following lines are not from my video, but add Edge support */
     position: relative;
     text-align: left;
     transition: none;
@@ -233,7 +226,6 @@ nav a:hover {
     background: none;
     top: initial;
     left: initial;
-    /* end Edge support stuff */
     grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;
@@ -253,7 +245,7 @@ nav a:hover {
   nav a::before {
     content: "";
     display: block;
-    height: 5px;
+    height: 0.5rem;
     background: #000;
     position: absolute;
     top: -0.75em;
@@ -279,6 +271,6 @@ nav a:hover {
 
   .content__paragraph {
     width: 70%;
-    font-size: 2.6rem; } }
+    font-size: 2.4rem; } }
 
 /*# sourceMappingURL=style.css.map */
