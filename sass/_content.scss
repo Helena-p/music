@@ -1,1 +1,31 @@
 @import "font";
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 100vh;
+  padding: 5%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+  height: 30%;
+  padding: 5%;
+  &__paragraph {
+    margin: auto;
+  }
+}
+
+.picture {
+  align-self: flex-end;
+}
